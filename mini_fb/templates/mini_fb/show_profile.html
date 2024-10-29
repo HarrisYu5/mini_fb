@@ -31,6 +31,25 @@
             </tr>
         </table>
     </div>
+    <div>
+        {% if profile.get_status_message %}
+            <h2>Status message</h2>
+        
+            {% for s in article.get_status_message %}
+            <div>
+                <strong>by {{s.profile}} and {{c.timeStamp}} </strong>
+                <p>
+                    {{s.message}}
+                </p>
+
+            </div>
+            {% endfor %}
+
+        {% else %}
+            <div>
+                <h2>No status message</h2>
+            </div>
+        {% endif %}
 </div>
 
 {% endblock %}
