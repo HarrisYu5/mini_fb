@@ -1,0 +1,36 @@
+{% extends 'mini_fb/base.html' %}
+
+{% block content %}
+
+<div>
+    <div>
+        <h2>Welcome to {{ profile.firstName }} {{ profile.lastName }}'s Profile</h2>
+    </div>
+
+    <div>
+        <img src="{{profile.profile_image_url}}" alt="{{ profile.firstName }} {{ profile.lastName }}'s picture">
+    </div>
+
+    <div>
+        <table>
+            <tr>
+                <td>First Name: </td>
+                <td>{{ profile.firstName }}</td>
+            </tr>
+            <tr>
+                <td>Last Name: </td>
+                <td>{{ profile.lastName }}</td>
+            </tr>
+            <tr>
+                <td>City: </td>
+                <td>{{ profile.city }}</td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td>{{ profile.email }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
