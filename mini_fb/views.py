@@ -15,3 +15,9 @@ class ShowProfilePageView(DetailView):
 
     def get_StatusMessage(self):
         return StatusMessage.objects.filter(profile=self.object)
+
+class createProfileView(CreateView):
+    model = Profile
+    template_name = 'mini_fb/create_profile_form.html'
+    fields = ['firstName', 'lastName', 'city', 'email', 'profile_image_url']
+    success_url = '/mini_fb/'
