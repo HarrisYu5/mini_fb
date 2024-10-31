@@ -5,3 +5,8 @@ class CreateProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['firstName', 'lastName', 'city', 'email', 'profile_image_url'] 
+
+class CreatestatusMessageForm(forms.ModelForm):
+    class Meta:
+        model = StatusMessage
+        fields = ['message']

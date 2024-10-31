@@ -35,9 +35,9 @@
         {% if profile.get_status_message %}
             <h2>Status message</h2>
         
-            {% for s in article.get_status_message %}
+            {% for s in profile.get_status_message %}
             <div>
-                <strong>by {{s.profile}} and {{c.timeStamp}} </strong>
+                <strong>by {{s.profile}} and {{s.timeStamp}} </strong>
                 <p>
                     {{s.message}}
                 </p>
@@ -50,6 +50,11 @@
                 <h2>No status message</h2>
             </div>
         {% endif %}
+</div>
+<div>
+    <form action="{% url 'create_status' profile.pk %}">
+        <button type="submit">Create a new status message</button>
+    </form>
 </div>
 
 {% endblock %}
